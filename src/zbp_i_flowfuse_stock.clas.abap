@@ -1,0 +1,5 @@
+CLASS zbp_i_flowfuse_stock DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_flowfuse_stock.
+ENDCLASS.
+
+CLASS zbp_i_flowfuse_stock IMPLEMENTATION.
+ENDCLASS.

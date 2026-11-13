@@ -1,0 +1,6 @@
+@EndUserText.label: 'FlowFuse Service Definition'
+define service ZSD_FLOWFUSE {
+  expose ZC_FLOWFUSE_TRANSFER    as Transfer;
+  expose ZC_FLOWFUSE_REQUIREMENT as Requirement;
+  expose ZC_FLOWFUSE_STOCK       as Stock;
+}

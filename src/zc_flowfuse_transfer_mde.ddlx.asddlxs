@@ -1,0 +1,92 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZC_FLOWFUSE_TRANSFER with
+{
+  @UI.facet: [
+    {
+      id: 'TransferDetails',
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Transfer Details',
+      position: 10
+    }
+  ]
+
+  @UI.lineItem: [
+    { position: 10, label: 'Transfer ID' }
+  ]
+  @UI.identification: [
+    { position: 10, label: 'Transfer ID' }
+  ]
+  TransferId;
+
+  @UI.lineItem: [
+    { position: 20, label: 'Requirement' }
+  ]
+  @UI.identification: [
+    { position: 20, label: 'Requirement' }
+  ]
+  RequirementId;
+
+  @UI.lineItem: [
+    { position: 30, label: 'Material' }
+  ]
+  @UI.identification: [
+    { position: 30, label: 'Material' }
+  ]
+  MaterialId;
+
+  @UI.lineItem: [
+    { position: 40, label: 'Source Location' }
+  ]
+  @UI.identification: [
+    { position: 40, label: 'Source Location' }
+  ]
+  SourceLocation;
+
+  @UI.lineItem: [
+    { position: 50, label: 'Target Location' }
+  ]
+  @UI.identification: [
+    { position: 50, label: 'Target Location' }
+  ]
+  TargetLocation;
+
+  @UI.lineItem: [
+    { position: 60, label: 'Quantity' }
+  ]
+  @UI.identification: [
+    { position: 60, label: 'Quantity' }
+  ]
+  TransferQty;
+
+  @UI.lineItem: [
+    { position: 70, label: 'Recovery Score' }
+  ]
+  @UI.identification: [
+    { position: 70, label: 'Recovery Score' }
+  ]
+  RecoveryScore;
+
+  @UI.lineItem: [
+    { position: 80, label: 'Status' }
+  ]
+  @UI.identification: [
+    { position: 80, label: 'Status' }
+  ]
+  Status;
+
+  @UI.lineItem: [
+    { position: 90, label: 'Escalation' }
+  ]
+  @UI.identification: [
+    { position: 90, label: 'Escalation' }
+  ]
+  EscalationRequired;
+
+  @UI.lineItem: [
+    { position: 100, label: 'Explanation' }
+  ]
+  @UI.identification: [
+    { position: 100, label: 'Explanation' }
+  ]
+  Explanation;
+}

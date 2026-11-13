@@ -1,0 +1,40 @@
+managed implementation in class zbp_i_flowfuse_requirement unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_FLOWFUSE_REQUIREMENT alias Requirement
+persistent table zyff_requirement
+draft table zyff_req_d
+lock master
+total etag LastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  action GenerateRecommendation;
+
+  field ( readonly ) LastChangedAt, LocalLastChangedAt;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zyff_requirement
+  {
+    RequirementId      = requirement_id;
+    MaterialId        = material_id;
+    LocationId         = location_id;
+    UnitField          = unit_field;
+    RequiredQty        = required_qty;
+    AvailableQty       = available_qty;
+    Urgency            = urgency;
+    Status              = status;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

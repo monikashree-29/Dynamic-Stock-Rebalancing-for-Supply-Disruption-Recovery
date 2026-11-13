@@ -1,0 +1,71 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZC_FLOWFUSE_REQUIREMENT with
+{
+  @UI.facet: [
+    {
+      id: 'RequirementDetails',
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Requirement Details',
+      position: 10
+    }
+  ]
+
+  @UI.lineItem: [
+    { position: 10, label: 'Requirement ID' }
+  ]
+  @UI.identification: [
+    { position: 10, label: 'Requirement ID' }
+  ]
+  RequirementId;
+
+  @UI.lineItem: [
+    { position: 20, label: 'Material' }
+  ]
+  @UI.identification: [
+    { position: 20, label: 'Material' }
+  ]
+  MaterialId;
+
+  @UI.lineItem: [
+    { position: 30, label: 'Location' }
+  ]
+  @UI.identification: [
+    { position: 30, label: 'Location' }
+  ]
+  LocationId;
+
+  @UI.lineItem: [
+    { position: 40, label: 'Required Quantity' }
+  ]
+  @UI.identification: [
+    { position: 40, label: 'Required Quantity' }
+  ]
+  RequiredQty;
+
+  @UI.lineItem: [
+    { position: 50, label: 'Available Quantity' }
+  ]
+  @UI.identification: [
+    { position: 50, label: 'Available Quantity' }
+  ]
+  AvailableQty;
+
+  @UI.lineItem: [
+    { position: 60, label: 'Urgency' }
+  ]
+  @UI.identification: [
+    { position: 60, label: 'Urgency' }
+  ]
+  Urgency;
+
+  @UI.lineItem: [
+    { position: 70, label: 'Status' },
+    {
+      position: 80,
+      type: #FOR_ACTION,
+      dataAction: 'GenerateRecommendation',
+      label: 'Generate Recommendation'
+    }
+  ]
+  Status;
+}

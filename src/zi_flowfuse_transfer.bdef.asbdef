@@ -1,0 +1,39 @@
+managed implementation in class zbp_i_flowfuse_transfer unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_FLOWFUSE_TRANSFER alias Transfer
+persistent table zyff_transfer
+draft table zyff_transfer_d
+lock master
+total etag LastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zyff_transfer
+  {
+    TransferId         = transfer_id;
+    RequirementId      = requirement_id;
+    MaterialId         = material_id;
+    SourceLocation     = source_location;
+    TargetLocation     = target_location;
+    UnitField          = unit_field;
+    TransferQty        = transfer_qty;
+    RecoveryScore      = recovery_score;
+    Status              = status;
+    EscalationRequired = escalation_required;
+    Explanation        = explanation;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

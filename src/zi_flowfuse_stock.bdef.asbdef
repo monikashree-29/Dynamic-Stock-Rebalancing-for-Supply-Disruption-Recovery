@@ -1,0 +1,36 @@
+managed implementation in class zbp_i_flowfuse_stock unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_FLOWFUSE_STOCK alias Stock
+persistent table zyff_stock
+draft table zyff_stock_d
+lock master
+total etag LastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+field ( readonly ) LastChangedAt, LocalLastChangedAt;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zyff_stock
+  {
+    StockId           = stock_id;
+    MaterialId        = material_id;
+    LocationId        = location_id;
+    UnitField         = unit_field;
+    AvailableQty      = available_qty;
+    SafetyQty         = safety_qty;
+    LastChangedAt     = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
